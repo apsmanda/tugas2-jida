@@ -1,22 +1,27 @@
-import HeroSub from "@/components/shared/HeroSub";
-import PropertiesListing from "@/components/Properties/PropertyList";
-import React from "react";
+import PropertiesListing from "@/components/Properties/AllCollection";
+import { Icon } from "@iconify/react";
 import { Metadata } from "next";
+
 export const metadata: Metadata = {
-    title: "Clopa Collection",
+    title: "All Collection - Stylish Threads",
 };
 
-const page = () => {
+const AllPropertiesPage = () => {
     return (
         <>
-            <HeroSub
-                title="Discover inspiring designed clothes."
-                description="Experience elegance and comfort with our exclusive clothes."
-                badge="Clothes Paradise"
-            />
+            <section className="pt-40">
+                <div className='mb-12 text-center'>
+                    <div className='flex gap-2.5 items-center justify-center mb-4'>
+                        <Icon icon={'ph:t-shirt-fill'} width={24} height={24} className='text-primary' />
+                        <p className='text-lg font-semibold'>Semua Koleksi</p>
+                    </div>
+                    <h1 className='text-5xl font-bold'>Jelajahi Gaya Anda</h1>
+                    <p className="text-lg mt-2 text-dark/70">Temukan semua produk terbaik kami dalam satu tempat.</p>
+                </div>
+            </section>
             <PropertiesListing />
         </>
     );
 };
 
-export default page;
+export default AllPropertiesPage;

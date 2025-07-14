@@ -3,7 +3,7 @@ import Link from 'next/link';
 const GetInTouch: React.FC = () => {
     return (
         <section>
-            <div className='container max-w-8xl mx-auto px-5 2xl:px-0'>
+            <div className='container max-w-6xl mx-auto px-5 2xl:px-0'>
                 <div className="relative rounded-t-2xl overflow-hidden">
                     <video
                         className="w-full absolute top-0 left-0 object-cover -z-10"

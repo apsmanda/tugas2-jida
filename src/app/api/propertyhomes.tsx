@@ -1,14 +1,23 @@
-import { ProdukPakaian } from '@/types/produkPakaian'; // Pastikan path ke type ini benar
+export interface ProdukPakaian {
+  name: string;
+  category: string;
+  price: number;
+  rating: number;
+  reviews: number;
+  slug: string;
+  images: {
+    src: string;
+  }[];
+}
 
 export const propertyHomes: ProdukPakaian[] = [
-  // Produk 1 (dari folder property1)
   {
-    name: 'Classic Black Jumpsuit',
-    category: 'Jumpsuit',
+    name: 'Classic Black Suit',
+    category: 'Atasan',
     price: 899000,
     rating: 4.8,
     reviews: 102,
-    slug: 'classic-black-jumpsuit',
+    slug: 'classic-black-shirt',
     images: [
       { src: '/images/properties/property1/property1.jpg' },
       { src: '/images/properties/property1/images-2.jpg' },
@@ -16,14 +25,14 @@ export const propertyHomes: ProdukPakaian[] = [
       { src: '/images/properties/property1/images-4.jpg' },
     ],
   },
-  // Produk 2 (dari folder property2)
+  
   {
-    name: 'Modern Office Blazer',
-    category: 'Outerwear',
+    name: 'Flowy Maxi Dress',
+    category: 'Dress',
     price: 1250000,
     rating: 4.9,
     reviews: 95,
-    slug: 'modern-office-blazer',
+    slug: 'flowy-maxy-dress',
     images: [
       { src: '/images/properties/property2/property2.jpg' },
       { src: '/images/properties/property2/images-2.jpg' },
@@ -31,7 +40,7 @@ export const propertyHomes: ProdukPakaian[] = [
       { src: '/images/properties/property2/images-4.jpg' },
     ],
   },
-  // Produk 3 (dari folder property3)
+  
   {
     name: 'Elegant White Top',
     category: 'Atasan',
@@ -46,10 +55,10 @@ export const propertyHomes: ProdukPakaian[] = [
       { src: '/images/properties/property3/images-4.jpg' },
     ],
   },
-  // Produk 4 (dari folder property4)
+  
   {
     name: 'Chic Pink Set',
-    category: 'Setelan',
+    category: 'Atasan',
     price: 1100000,
     rating: 4.8,
     reviews: 88,
@@ -61,14 +70,14 @@ export const propertyHomes: ProdukPakaian[] = [
       { src: '/images/properties/property4/images-4.jpg' },
     ],
   },
-  // Produk 5 (dari folder property5)
+  
   {
-    name: 'Flowy Maxi Dress',
-    category: 'Dress',
+    name: 'Modern Office Blazer',
+    category: 'Outerwear',
     price: 950000,
     rating: 4.9,
     reviews: 210,
-    slug: 'flowy-maxi-dress',
+    slug: 'modern-office-blazer',
     images: [
       { src: '/images/properties/property5/property5.jpg' },
       { src: '/images/properties/property5/images-2.jpg' },
@@ -76,7 +85,7 @@ export const propertyHomes: ProdukPakaian[] = [
       { src: '/images/properties/property5/images-4.jpg' },
     ],
   },
-  // Produk 6 (dari folder property6)
+  
   {
     name: 'Bold Red Coat',
     category: 'Outerwear',
@@ -91,34 +100,34 @@ export const propertyHomes: ProdukPakaian[] = [
       { src: '/images/properties/property6/images-4.jpg' },
     ],
   },
-  // Produk 7 (file tunggal)
+  
   {
-    name: 'Casual Denim Jacket',
-    category: 'Outerwear',
+    name: 'Midnight Bloom',
+    category: 'Dress',
     price: 799000,
     rating: 4.6,
     reviews: 180,
-    slug: 'casual-denim-jacket',
+    slug: 'midnight-bloom-dress',
     images: [{ src: '/images/properties/property7.jpg' }],
   },
-  // Produk 8 (file tunggal)
+  
   {
-    name: 'Formal Black Coat',
-    category: 'Outerwear',
+    name: 'Winter Starlight Queen',
+    category: 'Dress',
     price: 2100000,
     rating: 4.9,
     reviews: 99,
-    slug: 'formal-black-coat',
+    slug: 'winter-starlight-queen',
     images: [{ src: '/images/properties/property8.jpg' }],
   },
-  // Produk 9 (file tunggal)
+  
   {
-    name: 'Asymmetric White Blouse',
+    name: 'Moderno Suit',
     category: 'Atasan',
     price: 650000,
     rating: 4.7,
     reviews: 132,
-    slug: 'asymmetric-white-blouse',
+    slug: 'moderno-suit',
     images: [{ src: '/images/properties/property9.jpg' }],
   },
 ];

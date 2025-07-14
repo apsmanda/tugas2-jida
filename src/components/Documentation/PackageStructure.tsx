@@ -10,12 +10,12 @@ export const PackageStructure = () => {
   return (
     <div id="structure" className="md:scroll-m-[130px] scroll-m-28">
       <h3 className=" text-black text-2xl font-semibold mt-8 dark:text-white">
-        Pacakge Structure
+        Package Structure
       </h3>
       <div className="rounded-2xl p-6 pt-3 border border-black/10 dark:border-white/20 mt-6">
         <div className="flex items-center gap-4">
           <h5 className="text-base font-medium mt-3 mb-1">
-            Homely Tailwind Nextjs Templates
+            Stylish - Clothes Paradise
           </h5>
         </div>
         <ul className="ps-0 md:ps-5 list-unstyled">

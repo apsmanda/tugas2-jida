@@ -43,7 +43,7 @@ const FeaturedProperty: React.FC = () => {
   // [PERBAIKAN] Tanda > yang salah sudah dihapus dari sini
   return (
     <section>
-      <div className="container max-w-8xl mx-auto px-5 2xl:px-0">
+      <div className="container max-w-6xl mx-auto px-5 2xl:px-0">
         <div className="grid lg:grid-cols-2 gap-10">
            <div className="relative">
             <Carousel
@@ -142,7 +142,7 @@ const FeaturedProperty: React.FC = () => {
               </div>
             </div>
             <div className="flex gap-10 items-center">
-              <Link href={`/produk/${featuredProprty.slug}`} className="py-4 px-8 bg-primary hover:bg-dark duration-300 rounded-full text-white font-semibold">
+              <Link href={`/properties/${featuredProprty.slug}`} className="py-4 px-8 bg-primary hover:bg-dark duration-300 rounded-full text-white font-semibold">
                 Lihat Detail
               </Link>
               <div>

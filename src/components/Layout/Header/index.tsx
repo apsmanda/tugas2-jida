@@ -42,11 +42,10 @@ const Header: React.FC = () => {
 
   return (
     <header className={`fixed h-24 py-1 z-50 w-full bg-transparent transition-all duration-300 lg:px-0 px-4 ${sticky ? "top-3" : "top-0"}`}>
-      <nav className={`container mx-auto max-w-8xl flex items-center justify-between py-4 duration-300 ${sticky ? "shadow-lg bg-white dark:bg-dark rounded-full top-5 px-4 " : "shadow-none top-0"}`}>
+      <nav className={`container mx-auto max-w-7xl flex items-center justify-between py-4 duration-300 ${sticky ? "shadow-lg bg-white dark:bg-dark rounded-full top-5 px-4 " : "shadow-none top-0"}`}>
         <div className='flex justify-between items-center gap-2 w-full'>
           <div>
             <Link href='/'>
-              {/* [PERBAIKAN] Menggunakan komponen <Logo /> yang sudah rapi */}
               <Logo />
             </Link>
           </div>
@@ -69,7 +68,7 @@ const Header: React.FC = () => {
               />
             </button>
             <div className={`hidden md:block`}>
-              <Link href='/keranjang' className={`text-base text-inherit flex items-center gap-2 border-r pr-6 border-transparent ${iconColorClass} hover:text-primary dark:border-white/20 ${sticky ? 'border-dark/20' : ''}`}>
+              <Link href='/cart' className={`text-base text-inherit flex items-center gap-2 border-r pr-6 border-transparent ${iconColorClass} hover:text-primary dark:border-white/20 ${sticky ? 'border-dark/20' : ''}`}>
                 <Icon icon={'ph:shopping-cart-simple-bold'} width={24} height={24} />
               </Link>
             </div>
@@ -92,8 +91,6 @@ const Header: React.FC = () => {
           </div>
         </div>
       </nav>
-      
-      {/* ... Sisa kode tidak ada yang berubah ... */}
 
       {navbarOpen && <div className='fixed top-0 left-0 w-full h-full bg-black/50 z-40' />}
       <div
@@ -127,11 +124,11 @@ const Header: React.FC = () => {
             </nav>
           </div>
           <div className='flex flex-col gap-1 my-16 text-white'>
-            <p className='text-base sm:text-xm font-normal text-white/40'>
+            <p className='text-sm sm:text-xm font-normal text-white/40'>
               Hubungi Kami
             </p>
-            <Link href="mailto:halo@clothesparadise.com" className='text-base sm:text-xm font-medium text-inherit hover:text-primary'>
-              halo@clothesparadise.com
+            <Link href="mailto:halo@stylishthread.com" className='text-base sm:text-xm font-medium text-inherit hover:text-primary'>
+              halo@stylishthread.com
             </Link>
           </div>
         </div>

@@ -47,7 +47,7 @@ export const Introduction = () => {
         )}
 
         <div className="flex item-center justify-between">
-          <h3 className=" text-black text-2xl mt-4 font-semibold mb-6 dark:text-white" >Pacakge Versions</h3>
+          <h3 className=" text-black text-2xl mt-4 font-semibold mb-6 dark:text-white" >Package Versions</h3>
           <button onClick={() => setDocNavbarOpen(true)} className="p-0"> <Icon icon="gg:menu-right" className="text-3xl lg:hidden block" /></button>
         </div>
 
@@ -65,9 +65,9 @@ export const Introduction = () => {
           }
         </div>
         <div className="mt-5">
-          <p className="text-base font-medium text-midnight_text dark:text-white dark:text-opacity-50">Homely Tailwind NextJs Template is built with Tailwindcss and Nextjs.</p>
-          <p className="text-base font-medium text-midnight_text dark:text-white dark:text-opacity-50">These theme is ready to use and you can totally customize as per your requirement.</p>
-          <p className="text-base font-medium text-midnight_text dark:text-white dark:text-opacity-50">For Customize, You should have knowledge of NextJs, ReactJs, Tailwind and JSX to be able to modify these template.</p>
+          <p className="text-base font-medium text-midnight_text dark:text-white dark:text-opacity-50">Stylish is built with Tailwindcss and Nextjs.</p>
+          <p className="text-base font-medium text-midnight_text dark:text-white dark:text-opacity-50">Lorem ipsuum dolor sit amet.</p>
+          <p className="text-base font-medium text-midnight_text dark:text-white dark:text-opacity-50">Lorem ipsum dolor sit amet.</p>
         </div>
 
       </div>

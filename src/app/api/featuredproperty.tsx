@@ -1,6 +1,6 @@
 export const featuredProprty = {
-  name: "Elegant Gothic Gown",
-  slug: "elegant-gothic-gown",
+  name: "Midnight Bloom",
+  slug: "midnight-bloom-dress",
   rating: 4.9,
   reviews: 152,
   description: "Tampil memukau dengan gaun malam megah bergaya gotik. Dibuat dengan detail brokat ungu mewah di atas kain satin hitam yang elegan, menciptakan siluet yang dramatis dan tak terlupakan.",

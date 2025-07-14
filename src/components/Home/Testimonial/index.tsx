@@ -10,24 +10,6 @@ import {
 } from "@/components/ui/carousel";
 import { testimonials } from "@/app/api/testimonial"; // PASTIKAN DATA DISESUAIKAN
 
-// Contoh struktur data di dalam file "@/app/api/testimonial.ts"
-/*
-export const testimonials = [
-  {
-    review: "Kualitas bajunya juara! Bahannya adem dan jahitannya rapi banget. Pengirimannya juga cepat. Pasti akan order lagi di sini!",
-    image: "/images/pelanggan/pelanggan-1.jpg", // Foto pelanggan
-    name: "Aulia Putri",
-    position: "Pelanggan Setia" // Ganti 'position' menjadi status pelanggan
-  },
-  {
-    review: "Modelnya selalu up-to-date dan nggak pasaran. Suka banget sama koleksi dress-nya, bikin penampilan jadi lebih percaya diri.",
-    image: "/images/pelanggan/pelanggan-2.jpg",
-    name: "Rizky Ananda",
-    position: "Fashion Enthusiast"
-  }
-];
-*/
-
 const Testimonial = () => {
     const [api, setApi] = React.useState<CarouselApi | undefined>(undefined);
     const [current, setCurrent] = React.useState(0);
@@ -62,7 +44,7 @@ const Testimonial = () => {
                     unoptimized={true}
                 />
             </div>
-            <div className="container max-w-8xl mx-auto px-5 2xl:px-0">
+            <div className="container max-w-6xl mx-auto px-5 2xl:px-0">
                 <div>
                     <p className="text-white text-base font-semibold flex gap-2">
                         {/* Ikon diubah menjadi ikon kutipan (quotes) */}

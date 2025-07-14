@@ -30,7 +30,7 @@ const BlogSmall: React.FC = () => {
 
     return (
         <section>
-            <div className="container max-w-8xl mx-auto px-5 2xl:px-0">
+            <div className="container max-w-6xl mx-auto px-5 2xl:px-0">
                 <div className='flex justify-between md:items-end items-start mb-10 md:flex-row flex-col'>
                     <div>
                         <p className="text-dark/75 dark:text-white/75 text-base font-semibold flex gap-2">

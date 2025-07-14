@@ -2,8 +2,9 @@ import { Icon } from '@iconify/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Metadata } from "next";
+
 export const metadata: Metadata = {
-    title: "Contact Us | Homely",
+    title: "Contact Us | Stylish Thread",
 };
 
 export default function ContactUs() {
@@ -13,7 +14,7 @@ export default function ContactUs() {
         <div className='flex gap-2.5 items-center justify-center mb-3'>
           <span>
             <Icon
-              icon={'ph:house-simple-fill'}
+              icon={'ph:shopping-cart-simple-bold'}
               width={20}
               height={20}
               className='text-primary'
@@ -28,8 +29,8 @@ export default function ContactUs() {
             Have questions? ready to help!
           </h3>
           <p className='text-xm font-normal tracking-tight text-black/50 dark:text-white/50 leading-6'>
-            Looking for your dream home or ready to sell? Our expert team offers
-            personalized guidance and market expertise tailored to you.
+            Looking for your dream clothes? Our expert team offers
+            personalized tailored for you.
           </p>
         </div>
       </div>
@@ -38,7 +39,7 @@ export default function ContactUs() {
         <div className='flex flex-col lg:flex-row lg:items-center gap-12'>
           <div className='relative w-fit'>
             <Image
-              src={'/images/contactUs/contactUs.jpg'}
+              src={'/images/contactUs/ContactUs.jfif'}
               alt='wall'
               width={497}
               height={535}
@@ -50,7 +51,7 @@ export default function ContactUs() {
                 Contact information
               </h5>
               <p className='text-sm xs:text-base mobile:text-xm font-normal text-white/80'>
-                Ready to find your dream home or sell your property? We’re here
+                Ready to find your beloved clothes or sell your textile? We’re here
                 to help!
               </p>
             </div>
@@ -59,7 +60,7 @@ export default function ContactUs() {
                 <div className='flex items-center gap-4 group w-fit'>
                   <Icon icon={'ph:phone'} width={32} height={32} />
                   <p className='text-sm xs:text-base mobile:text-xm font-normal group-hover:text-primary'>
-                    +1 0239 0310 1122
+                    +62 813 meow meow
                   </p>
                 </div>
               </Link>
@@ -67,14 +68,14 @@ export default function ContactUs() {
                 <div className='flex items-center gap-4 group w-fit'>
                   <Icon icon={'ph:envelope-simple'} width={32} height={32} />
                   <p className='text-sm xs:text-base mobile:text-xm font-normal group-hover:text-primary'>
-                    support@gleamer.com
+                    halo@stylishthread.com
                   </p>
                 </div>
               </Link>
               <div className='flex items-center gap-4'>
                 <Icon icon={'ph:map-pin'} width={32} height={32} />
                 <p className='text-sm xs:text-base mobile:text-xm font-normal'>
-                  Blane Street, Manchester
+                  Di Rumah
                 </p>
               </div>
             </div>

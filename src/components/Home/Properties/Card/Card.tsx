@@ -1,7 +1,18 @@
-import { ProdukPakaian } from '@/types/produkPakaian'
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
 import Link from 'next/link'
+
+export interface ProdukPakaian {
+  name: string;
+  category: string;
+  price: number;
+  rating: number;
+  reviews: number;
+  slug: string;
+  images: {
+    src: string;
+  }[];
+}
 
 const ProductCard: React.FC<{ item: ProdukPakaian }> = ({ item }) => {
   const { name, category, price, rating, reviews, slug, images } = item
@@ -17,7 +28,7 @@ const ProductCard: React.FC<{ item: ProdukPakaian }> = ({ item }) => {
     <div>
       <div className='relative rounded-2xl border border-dark/10 dark:border-white/10 group hover:shadow-3xl duration-300 dark:hover:shadow-white/20'>
         <div className='overflow-hidden rounded-t-2xl'>
-          <Link href={`/produk/${slug}`}>
+          <Link href={`/properties/${slug}`}>
             {mainImage && (
               <Image
                 src={mainImage}
@@ -39,11 +50,10 @@ const ProductCard: React.FC<{ item: ProdukPakaian }> = ({ item }) => {
             />
           </div>
         </div>
-        {/* ... Sisa kode tetap sama ... */}
         <div className='p-6'>
           <div className='flex flex-col mobile:flex-row gap-5 mobile:gap-0 justify-between mb-6'>
             <div>
-              <Link href={`/produk/${slug}`}>
+              <Link href={`/properties/${slug}`}>
                 <h3 className='text-xl font-medium text-black dark:text-white duration-300 group-hover:text-primary'>
                   {name}
                 </h3>
