@@ -33,7 +33,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
       items[field] = realSlug;
     }
     if (field === "content") {
-      // You can modify the content here to include images
+      // Modify the content here to include images
       items[field] = processImages(content);
     }
 

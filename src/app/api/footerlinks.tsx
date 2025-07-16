@@ -7,5 +7,6 @@ export const FooterLinks = [
   { href: "/contactus", label: "Hubungi Kami" },
   { href: "/aboutus", label: "Tentang Kami" },
   { href: "/not-found", label: "404 Page" },
+  { href: "/admin/dashboard", label: "Kelola Produk"},
   { href: "/documentation", label: "Dokumentasi" }
 ];

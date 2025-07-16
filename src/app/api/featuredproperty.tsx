@@ -12,7 +12,7 @@ export const featuredProprty = {
     sizes: "Custom (M2O)"
   },
   images: [
-    { scr: '/images/featuredproperty/image-3.jpg', alt: 'Elegant Gothic Gown tampak depan' },
+    { scr: '/images/featuredproperty/image-3.jpg', alt: 'Midnight Bloom tampak depan' },
     { scr: '/images/featuredproperty/image-1.jpg', alt: 'Detail gaun dari dekat' },
     { scr: '/images/featuredproperty/image-4.jpg', alt: 'Contoh gaya lain' },
     { scr: '/images/featuredproperty/image-2.jpg', alt: 'Contoh setelan lain' }

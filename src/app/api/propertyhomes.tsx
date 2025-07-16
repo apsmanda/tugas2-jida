@@ -1,4 +1,5 @@
 export interface ProdukPakaian {
+  id: number;
   name: string;
   category: string;
   price: number;
@@ -10,8 +11,9 @@ export interface ProdukPakaian {
   }[];
 }
 
-export const propertyHomes: ProdukPakaian[] = [
+export let propertyHomes: ProdukPakaian[] = [
   {
+    id: 1,
     name: 'Classic Black Suit',
     category: 'Atasan',
     price: 899000,
@@ -27,6 +29,7 @@ export const propertyHomes: ProdukPakaian[] = [
   },
   
   {
+    id: 2,
     name: 'Flowy Maxi Dress',
     category: 'Dress',
     price: 1250000,
@@ -42,6 +45,7 @@ export const propertyHomes: ProdukPakaian[] = [
   },
   
   {
+    id: 3,
     name: 'Elegant White Top',
     category: 'Atasan',
     price: 550000,
@@ -57,6 +61,7 @@ export const propertyHomes: ProdukPakaian[] = [
   },
   
   {
+    id: 4,
     name: 'Chic Pink Set',
     category: 'Atasan',
     price: 1100000,
@@ -72,6 +77,7 @@ export const propertyHomes: ProdukPakaian[] = [
   },
   
   {
+    id: 5,
     name: 'Modern Office Blazer',
     category: 'Outerwear',
     price: 950000,
@@ -87,6 +93,7 @@ export const propertyHomes: ProdukPakaian[] = [
   },
   
   {
+    id: 6,
     name: 'Bold Red Coat',
     category: 'Outerwear',
     price: 1800000,
@@ -102,6 +109,7 @@ export const propertyHomes: ProdukPakaian[] = [
   },
   
   {
+    id: 7,
     name: 'Midnight Bloom',
     category: 'Dress',
     price: 799000,
@@ -112,6 +120,7 @@ export const propertyHomes: ProdukPakaian[] = [
   },
   
   {
+    id: 8,
     name: 'Winter Starlight Queen',
     category: 'Dress',
     price: 2100000,
@@ -122,6 +131,7 @@ export const propertyHomes: ProdukPakaian[] = [
   },
   
   {
+    id: 9,
     name: 'Moderno Suit',
     category: 'Atasan',
     price: 650000,
