@@ -11,7 +11,7 @@ export interface ProdukPakaian {
   }[];
 }
 
-export let propertyHomes: ProdukPakaian[] = [
+export const propertyHomes: ProdukPakaian[] = [
   {
     id: 1,
     name: 'Classic Black Suit',
