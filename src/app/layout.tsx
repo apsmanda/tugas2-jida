@@ -8,6 +8,7 @@ import NextTopLoader from 'nextjs-toploader';
 import SessionProviderComp from '@/components/nextauth/SessionProvider'
 import { CartProvider } from '@/cart/CartContext'
 import { Toaster } from 'react-hot-toast';
+import StoreProvider from './StoreProvider';
 
 const font = Bricolage_Grotesque({ subsets: ["latin"] });
 
@@ -24,11 +25,11 @@ export default function RootLayout({
   session: any
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body className={`${font.className} bg-white dark:bg-black antialiased`}>
         <NextTopLoader color="#07be8a" />
         <SessionProviderComp session={session}>
-          <CartProvider>
+          <StoreProvider>
             <ThemeProvider
               attribute='class'
               enableSystem={true}
@@ -74,7 +75,7 @@ export default function RootLayout({
               {children}
               <Footer />
             </ThemeProvider>
-          </CartProvider>
+          </StoreProvider> 
         </SessionProviderComp>
       </body>
     </html>

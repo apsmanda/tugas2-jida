@@ -1,104 +1,103 @@
-"use client";
+'use client';
 
-import { ProdukPakaian } from "@/app/api/propertyhomes";
-import ProductForm from "@/components/Admin/ProductForm"; 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
-const AdminDashboard = () => {
+interface ProdukPakaian {
+  id: number;
+  name: string;
+  price: number;
+}
+
+type UIState = 'loading' | 'success' | 'error' | 'empty';
+
+export default function AdminDashboard() {
     const [products, setProducts] = useState<ProdukPakaian[]>([]);
-    const [isStyleOpen, setIsStyleOpen] = useState(false);
-    const [editingProduct, setEditingProduct] = useState<ProdukPakaian | null>(null);
+    const [uiState, setUiState] = useState<UIState>('loading');
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-    const fetchProducts = async () => {
-        const res = await fetch('/api/products');
-        const data = await res.json();
-        setProducts(data);
-    };
+    const fetchProducts = useCallback(async () => {
+        setUiState('loading');
+        setErrorMessage(null);
+        try {
+            const response = await fetch('/api/products');
+            const data = await response.json();
+
+            if (!response.ok) {
+                const errorMsg = data.message || 'Gagal mengambil data dari server.';
+                throw new Error(errorMsg);
+            }
+
+            if (!Array.isArray(data)) {
+                throw new Error('Format data dari API salah, seharusnya array.');
+            }
+            
+            setProducts(data);
+            setUiState(data.length === 0 ? 'empty' : 'success');
+
+        } catch (error: any) {
+            console.error("Terjadi kesalahan fatal saat mengambil produk:", error);
+            setProducts([]); 
+            setUiState('error'); 
+            setErrorMessage(error.message || 'Terjadi kesalahan yang tidak diketahui.');
+        }
+    }, []);
 
     useEffect(() => {
         fetchProducts();
-    }, []);
+    }, [fetchProducts]);
 
-    const handleAdd = () => {
-        setEditingProduct(null);
-        setIsStyleOpen(true);
-    };
-
-    const handleEdit = (product: ProdukPakaian) => {
-        setEditingProduct(product);
-        setIsStyleOpen(true);
-    };
-
-    const handleDelete = async (id: number) => {
-        if (confirm("Apakah Anda yakin ingin menghapus produk ini?")) {
-            await fetch(`/api/products/${id}`, {
-                method: 'DELETE',
-            });
-            fetchProducts(); 
+    const renderContent = () => {
+        switch (uiState) {
+            case 'loading':
+                return <p className="text-center text-gray-500 py-10">Memuat data produk...</p>;
+            
+            case 'error':
+                return (
+                    <div className="text-center text-red-600 bg-red-50 p-6 rounded-lg">
+                        <p className="font-bold text-lg">Oops! Terjadi Kesalahan</p>
+                        <p className="text-sm mt-1">{errorMessage}</p>
+                        <button 
+                            onClick={fetchProducts} 
+                            className="mt-4 px-5 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                        >
+                            Coba Lagi
+                        </button>
+                    </div>
+                );
+            
+            case 'empty':
+                return <p className="text-center text-gray-500 py-10">Belum ada produk yang ditambahkan.</p>;
+            
+            case 'success':
+                return (
+                    <div className="grid grid-cols-1 gap-4">
+                        {products.map(product => (
+                            <div key={product.id} className="flex justify-between items-center p-4 border rounded-lg shadow-sm">
+                                <span>{product.name}</span>
+                                <div>
+                                    <button className="px-3 py-1 bg-yellow-500 text-white rounded mr-2 text-sm">Edit</button>
+                                    <button className="px-3 py-1 bg-red-600 text-white rounded text-sm">Hapus</button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                );
+            
+            default:
+                return null;
         }
     };
 
-    const handleSubmit = async (productData: Omit<ProdukPakaian, 'id'>) => {
-        const method = editingProduct ? 'PUT' : 'POST';
-        const url = editingProduct ? `/api/products/${editingProduct.id}` : '/api/products';
-
-        await fetch(url, {
-            method: method,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(productData),
-        });
-
-        setIsStyleOpen(false); 
-        fetchProducts(); 
-    };
-
     return (
-        <div className="pt-40 pb-20">
-            <div className="container mx-auto px-5">
-                <h1 className="text-3xl font-bold mb-6 text-center">Kelola Produk</h1>
-
-                <button onClick={handleAdd} className="mb-6 px-4 py-2 bg-primary text-white rounded-md hover:bg-dark">
-                    + Tambah Produk Baru
+        <div className="container mx-auto p-8">
+            <div className="flex justify-between items-center mb-8">
+                <h1 className="text-3xl font-bold">Admin Dashboard</h1>
+                <button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 font-semibold">
+                    + Tambah Produk
                 </button>
-
-                <div className="overflow-x-auto">
-                    <table className="min-w-full bg-white dark:bg-dark border">
-                        <thead>
-                            <tr className="w-full bg-slate-50 dark:bg-dark/40">
-                                <th className="p-3 text-left">ID</th>
-                                <th className="p-3 text-left">Nama Produk</th>
-                                <th className="p-3 text-left">Kategori</th>
-                                <th className="p-3 text-left">Harga</th>
-                                <th className="p-3 text-left">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {products.map(product => (
-                                <tr key={product.id} className="border-b">
-                                    <td className="p-3">{product.id}</td>
-                                    <td className="p-3">{product.name}</td>
-                                    <td className="p-3">{product.category}</td>
-                                    <td className="p-3">Rp {product.price.toLocaleString('id-ID')}</td>
-                                    <td className="p-3">
-                                        <button onClick={() => handleEdit(product)} className="text-blue-500 hover:underline mr-4">Edit</button>
-                                        <button onClick={() => handleDelete(product.id)} className="text-red-500 hover:underline">Hapus</button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-
-                {isStyleOpen && (
-                    <ProductForm 
-                        onSubmit={handleSubmit}
-                        onClose={() => setIsStyleOpen(false)}
-                        initialData={editingProduct}
-                    />
-                )}
             </div>
+            
+            {renderContent()}
         </div>
     );
-};
-
-export default AdminDashboard;
+}
