@@ -7,9 +7,7 @@ interface RouteContext {
   };
 }
 
-// GET (by ID): Mengambil satu produk spesifik
 export async function GET(request: Request, context: RouteContext) {
-    // Ambil ID dari 'context.params'
     const id = parseInt(context.params.id, 10);
     try {
         if (isNaN(id)) {
